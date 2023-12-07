@@ -18,7 +18,7 @@ There is only one kind of atom(like LISP): utf8 string or byte array, for exampl
 
 ```
 
-The length prefix is used, no escape character '\', and the prefix itself is also readable decimal format;
+The length prefix is used, no escape character '\\', and the prefix itself is also readable decimal format;
 
 Parentheses are used to enhance readability and verify errors, instead of quotation marks;
 
