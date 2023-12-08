@@ -2,7 +2,7 @@
 
 # nbjson
 
-nbJSON: nano binary JSON
+nbJSON: nano binary JSON, a minimalism binary JSON protocol
 
 Eliminate colons, quotes, commas, escape characters, support binary;
 
