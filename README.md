@@ -1,6 +1,6 @@
 # nbjson
 
-nbJSON: nano binary JSON
+nbJSON: nano binary JSON, a minimalism binary JSON protocol
 
 对JSON的优势, 省掉冒号,引号,逗号,转义符, 支持二进制;
 
