@@ -2,6 +2,22 @@
 
 nbJSON: nano binary JSON, a minimalism binary JSON protocol
 
+极简例子放最前面:
+```
+   [{  name TOM age 3 }
+    { photBytes 256(\x00...\xFF) }]    
+```
+
+核心其实就是新的定义在bytes上的词法，用十进制长度前缀加括号括起原始bytes。用于传输schemeless二进制数据。
+顺便把JSON中的冗余冒号逗号引号转义符都省了(有点像lisp了)。
+要保留原版JSON语法，只植入新二进制词法，也是完全可以的。
+
+
+json 因为盲目抄 c/java, 用转义符描述二进制, 占用 400%空间
+base64是 133% 空间且不能用二进制编辑器可读
+现有的 schemaful 的protobuf,msgpack 和 schemaless 的 UBJSON BJData 数据类型都很复杂, 多种整型浮点;
+本方案直接存二进制,是100%空间 
+
 对JSON的优势, 省掉冒号,引号,逗号,转义符, 支持二进制;
 
 不定义各种长度整型浮点型, 不关心 big/little-endian;
@@ -37,11 +53,5 @@ nbJSON: nano binary JSON, a minimalism binary JSON protocol
 [{ (key1)(value1)  (key2)(value2)}
  { (bytes)(\x01\x02\x03)  } ]
 ```
-允许在无歧义的情况下省略长度前缀和括号, 例如:
-```
-[{  key1 value1  key2 value2 }
-  { bytes 256(\x00...\xFF) }]
-```
-现有的 schema 的protobuf,msgpack比较麻烦,
-
-schemaless 的 UBJSON BJdata 半可读, 但数据类型也很复杂, 几十种;
+允许在无歧义的情况下省略长度前缀和括号 
+ 
