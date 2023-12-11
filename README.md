@@ -2,7 +2,14 @@
 
 # nbjson
 
-nbJSON: nano binary JSON, a minimalism binary JSON protocol
+nbJSON: nano binary JSON, a minimalism protocol
+
+a minimalism sample first:
+```
+[{ name TOM age 3 }
+
+{ photoBytes 256(\x00... \xFF) }]
+```
 
 Eliminate colons, quotes, commas, escape characters, support binary;
 
@@ -61,10 +68,5 @@ The parser can allow length prefixes to be omitted when no ambiguity:
 
 Allows the omission of length prefixes and parentheses when no ambiguity, such as:
 
-```
-[{ key1 value1 key2 value2 }
-
-{ bytes 256(\x00... \xFF) }]
-```
 
 
